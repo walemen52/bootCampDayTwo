@@ -1,27 +1,27 @@
-//A function to return the min and max numeber(s) in a array//
+//A function to return the minimum and maximum elements of an array
  
   'use strict'
-  
-  var submit = {}
-  submit.findMinMax = function(num) {
+let findMinMax = () =>{
 
-    var min = 0,
-        max =0,
-        cur,
-  -23,10 +19,8  submit.findMinMax = function(num) {
-            min = cur;
-          } else if (cur >max) {
-            max=cur;
-        }
-        
-      }
+  let minMax = [];
+  let min = array[0];
+  let max = array[0];
 
-        } 
-      }
-        if (min !== max){
-          minMax.push(min);
-          minMax.push(max);
-  -38,4 +32,5  submit.findMinMax = function(num) {
+  for (let i =0; i < array.length; i++){
+    if (array[i] > max){
+      max = array[i];
+    }
+    else if(array[i] < min){
+      min = array[i];
+    }
   }
 
-module.exports = submit;
+  if(min === max){
+    minMax.push(max)
+    return minMax;
+  }
+  minMax.push(min);
+  minMax.push(max);
+  return minMax;
+}
+
